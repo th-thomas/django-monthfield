@@ -3,7 +3,7 @@
 from setuptools import setup
 
 setup(
-    name='django-monthfield-custom',
+    name='django-monthfield',
     version='0.1.3',
     author=u'Thibault THOMAS',
     author_email='thibaulthomas@gmail.com',
