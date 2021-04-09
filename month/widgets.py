@@ -14,9 +14,9 @@ class MonthSelectorWidget(widgets.MultiWidget):
     def __init__(self, attrs=None):
         # create choices for days, months, years
         _attrs = attrs or {}  # default class
-        _attrs['class'] = (_attrs.get('class', '') + ' w-month-year').strip()
+        _attrs['class'] = (_attrs.get('class', '') + ' select').strip()
         _widgets = [widgets.Select(attrs=_attrs, choices=MONTHS.items())]
-        _attrs['class'] += " w-year"
+        _attrs['class'] += " input"
         _widgets.append(widgets.NumberInput(attrs=_attrs))
         super(MonthSelectorWidget, self).__init__(_widgets, attrs)
 
