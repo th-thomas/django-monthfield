@@ -19,6 +19,10 @@ class MonthSelectorWidget(widgets.MultiWidget):
         _attrs['class'] += " input"
         _widgets.append(widgets.NumberInput(attrs=_attrs))
         super(MonthSelectorWidget, self).__init__(_widgets, attrs)
+        
+    def subwidgets(self, name, value, attrs=None):
+        context = self.get_context(name, value, attrs)
+        return context['widget']['subwidgets']
 
     @property
     def media(self):
