@@ -5,7 +5,6 @@ https://docs.djangoproject.com/en/1.8/ref/forms/widgets/#base-widget-classes
 from datetime import date
 from django.forms import widgets
 from django.utils.dates import MONTHS
-from django.templatetags.static import static
 
 from month.util import string_type
 
@@ -23,14 +22,6 @@ class MonthSelectorWidget(widgets.MultiWidget):
     def subwidgets(self, name, value, attrs=None):
         context = self.get_context(name, value, attrs)
         return context['widget']['subwidgets']
-
-    @property
-    def media(self):
-        media = self._get_media()
-        media.add_css({
-            'screen': (static('month/field/widget_month.css'),)
-        })
-        return media
 
     def decompress(self, value):
         if value:
